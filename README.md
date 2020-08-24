@@ -1,5 +1,5 @@
-# 计组实验课的verilog代码
-### 1. 新建vivado项目
+# 计组实验课的Verilog代码
+### 1. 打开vivado，新建项目
 ### 2. 添加文件
 ``` 
 Add or create design sources -> Add files -> Add Directories
