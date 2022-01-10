@@ -46,8 +46,8 @@ wire [31:0] join_out;
 
 assign alu_r = alu_out;
     
-assign maddr=alu_out;
-assign mwdata=rf_rdata2;
+assign maddr = alu_out;
+assign mwdata = rf_rdata2;
 
 wire [4:0]mux6_out = M6 ? inst[20:16]:inst[15:11];
     
