@@ -36,12 +36,12 @@ Run Simulation
 ### 5. imem.txt 指令是什么含义？
 本来是机器代码，我写了python看了一下含义，发现指令种类很少😭非常抱歉此前从未注意过。先放前60条指令如下（后面全是ADDU指令了），之后我抽空写写比较完整的指令
 
-SLL R0,R0,0
-ORI R0,R0,1    
-ORI R0,R0,65535
-SLL R1,R1,8    
-ORI R1,R0,65535
-ORI R1,R0,32768
+SLL R0,R0,0 <br/>
+ORI R0,R0,1<br/>
+ORI R0,R0,65535<br/>
+SLL R1,R1,8<br/>
+ORI R1,R0,65535<br/>
+ORI R1,R0,32768<br/>
 SLL R1,R1,8    
 ORI R1,R0,0    
 ORI R1,R0,1    
