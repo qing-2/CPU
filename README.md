@@ -33,6 +33,8 @@ Run Simulation
 ### 4. lw指令是有符号扩展，M4应该取2（根据decoder那个视频里的图看），为什么代码写的M4是取1？
 因为我把它合并了，用 signed16 这个变量判断是否按符号扩展，m4的取值就只有0和1了，和那张图不一样了，在 module ext16 的代码里标注了，忘记在decoder那p视频里说了，sorry😥
 
+### 5. 有朋友提到“用vivado仿真还是有点麻烦，主要是vivado现在越来越大了。推荐一个简单的仿真器，iverilog，windows和linux下都方便安装使用。可以搭配gtkwave看仿真波形。”
+我试了一下感觉很好用， [icarus_gtkwave教程有详细介绍](https://brng.dev/blog/technical/tutorial/2019/05/11/icarus_gtkwave/)  ，其中`gtkwave wave.vd`写错了，应该是`gtkwave wave.vcd`
 ### 5. imem.txt 指令是什么含义？
 本来是机器代码，我写了python看了一下含义，发现指令种类很少😭非常抱歉此前从未注意过。先放前60条指令如下（后面全是ADDU指令了），之后我抽空写写比较完整的指令
 
