@@ -14,6 +14,10 @@ Run Simulation
 # 常见问题
 ### 1. 运行不成功？
 多半是imem.v的路径不对。使用绝对路径，并且 "\" 换成 "\\"或"/"，路径中不要使用中文和空格。举个正确的例子 “D:/Downloads/CPU-master/imem.txt”
+
+### 2. 为什么仿真波形里只出现了5条指令？
+菜单栏help的下面有三个按钮，restart/ run all /run for 10us，点一下run for 10us它就会往后继续执行了，它不会因为指令不足而结束，如果指令读取完毕它只会变红报错
+
 ### 2. 在dmem的数据存储器代码中，为什么用 [31:2] 来寻址？
 因为我们设定的是这样的。我们设地址是32位的，一个地址对应一个字节的内容。
 
@@ -35,7 +39,7 @@ Run Simulation
 
 ### 5. 有朋友提到“用vivado仿真还是有点麻烦，主要是vivado现在越来越大了。推荐一个简单的仿真器，iverilog，windows和linux下都方便安装使用。可以搭配gtkwave看仿真波形。”
 我试了一下感觉很好用， [icarus_gtkwave教程有详细介绍](https://brng.dev/blog/technical/tutorial/2019/05/11/icarus_gtkwave/)  ，其中`gtkwave wave.vd`写错了，应该是`gtkwave wave.vcd`
-### 5. imem.txt 指令是什么含义？
+### 6. imem.txt 指令是什么含义？
 本来是机器代码，我写了python看了一下含义，发现指令种类很少😭非常抱歉此前从未注意过。先放前60条指令如下（后面全是ADDU指令了），之后我抽空写写比较完整的指令
 
 SLL R0,R0,0 <br/>
