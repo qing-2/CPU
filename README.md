@@ -1,4 +1,4 @@
-# 8指令单周期CPU
+# 8-instruction single cycle MIPS32 CPU
 ### 1. 打开vivado，新建项目
 ### 2. 添加文件
 ``` 
