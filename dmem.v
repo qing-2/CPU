@@ -31,15 +31,21 @@ input [31:0] wdata,
 output [31:0] rdata
     );
     
-reg [31:0] RAM [2047:0];
-assign rdata=(CS&DM_R)?RAM[addr[31:2]]:32'h0;
+reg [31:0] ROM [2047:0];
+initial
+begin
+  $readmemh("D:/Downloads/CPU-master/rom.data",ROM);
+end
+
+
+assign rdata=(CS&DM_R)?ROM[addr[31:2]]:32'h0;
 
 always @(posedge clk)
 begin
   if(CS)
   begin
     if(DM_W)
-    RAM[addr[31:2]]<=wdata;
+      ROM[addr[31:2]]<=wdata;
   end
 end
 endmodule
