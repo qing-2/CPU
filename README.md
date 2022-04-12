@@ -4,7 +4,7 @@
 ``` 
 Add or create design sources -> Add files -> Add Directories
 ```
-### 3. 更改imem.v里指令文件的读取路径
+### 3. 更改imem.v里指令文件和dmem.v里的rom 的读取路径
 ### 4. 仿真
 ```
 Run Simulation 
@@ -40,9 +40,11 @@ Run Simulation
 ### 6. 有朋友提到“用vivado仿真还是有点麻烦，主要是vivado现在越来越大了。推荐一个简单的仿真器，iverilog，windows和linux下都方便安装使用。可以搭配gtkwave看仿真波形。”
 我试了一下感觉很好用， [icarus_gtkwave教程有详细介绍](https://brng.dev/blog/technical/tutorial/2019/05/11/icarus_gtkwave/)  ，其中`gtkwave wave.vd`写错了，应该是`gtkwave wave.vcd`
 ### 7. imem.txt 指令是什么含义？
-（第一条全0指令是又加的，因为每次reset pc=0 npc就是4 就会错过第一条指令）<br/>
+（第一条sll指令相当于空指令，因为每次reset pc=0 npc就是4 就会错过第一条指令）<br/>
 2022.4.12更新了imem.txt，现在包含全部8条指令，汇编代码如下
 ``` 
+sll  $zero,$zero,0
+
 goto:
 addu $s2,$s1,$s0
 
@@ -56,7 +58,7 @@ lw   $s4,3($s1)
 
 sw   $s4,3($s1)
 
-beq  $s1,$3,goto
+beq  $s2,$4,goto
 
 j goto
 ``` 
