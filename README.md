@@ -13,7 +13,7 @@ Run Simulation
 
 # 常见问题
 ### 1. 运行不成功？
-多半是imem.v的路径不对。使用绝对路径，并且 "\" 换成 "\\"或"/"，路径中不要使用中文和空格。举个正确的例子 “D:/Downloads/CPU-master/imem.txt”
+多半是imem.v的路径不对。使用绝对路径，并且 "\\" 换成 "\\\\"或"/"，路径中不要使用中文和空格。举个正确的例子 “D:/Downloads/CPU-master/imem.txt”
 
 ### 2. 为什么仿真波形里只出现了5条指令？
 菜单栏help的下面有三个按钮，restart/ run all /run for 10us，点一下run for 10us它就会往后继续执行了，它不会因为指令不足而结束，如果指令读取完毕它只会变红报错
