@@ -65,4 +65,5 @@ j goto
 
 1）. [MIPS Assembler and Runtime Simulator | Verilog](http://courses.missouristate.edu/kenvollmar/mars/index.htm) 需要Java环境，加上配置Java环境不到半小时就能搞定，小巧简单好用（更推荐⭐）
 
-2）. 交叉编译工具链。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供很多完整编译工具，比如mips-linux-gcc（类似gcc）
+2）. 交叉编译工具链。[简介](https://www.bilibili.com/video/BV1Az4y117rY?spm_id_from=333.999.header_right.fav_list.click)
+。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供完备的编译工具，比如mips-linux-gcc（类似gcc）
