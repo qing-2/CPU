@@ -40,65 +40,28 @@ Run Simulation
 ### 6. 有朋友提到“用vivado仿真还是有点麻烦，主要是vivado现在越来越大了。推荐一个简单的仿真器，iverilog，windows和linux下都方便安装使用。可以搭配gtkwave看仿真波形。”
 我试了一下感觉很好用， [icarus_gtkwave教程有详细介绍](https://brng.dev/blog/technical/tutorial/2019/05/11/icarus_gtkwave/)  ，其中`gtkwave wave.vd`写错了，应该是`gtkwave wave.vcd`
 ### 7. imem.txt 指令是什么含义？
-本来是机器代码，我写了python看了一下含义，发现指令种类很少😭非常抱歉此前从未注意过。先放前60条指令如下（后面全是ADDU指令了），之后我抽空写写比较完整的指令
+2022.4.12更新了imem.txt，现在包含全部8条指令，汇编代码如下
+``` 
+goto:
+addu $s2,$s1,$s0
 
-SLL R0,R0,0 <br/>
-ORI R0,R0,1<br/>
-ORI R0,R0,65535<br/>
-SLL R1,R1,8<br/>
-ORI R1,R0,65535<br/>
-ORI R1,R0,32768<br/>
-SLL R1,R1,8    
-ORI R1,R0,0    
-ORI R1,R0,1    
-ORI R1,R0,2    
-ORI R1,R0,3    
-ORI R1,R0,4    
-ORI R1,R0,5    
-ORI R1,R0,6    
-ORI R1,R0,7<br/>
-ORI R1,R0,8<br/>
-ORI R1,R0,9<br/>
-ORI R1,R0,10<br/>
-ORI R1,R0,11<br/>
-ORI R1,R0,12<br/>
-ORI R1,R0,13<br/>
-ORI R1,R0,14<br/>
-ORI R1,R0,61440<br/>
-SLL R9,R9,8<br/>
-ORI R9,R0,65535<br/>
-SLL R10,R10,8<br/>
-ORI R10,R0,32768<br/>
-ORI R10,R0,32768<br/>
-SLL R10,R10,8<br/>
-ORI R10,R0,65535<br/>
-SLL R11,R11,8<br/>
-ORI R11,R0,65535<br/>
-ORI R11,R0,65535<br/>
-SLL R11,R11,8<br/>
-ORI R11,R0,65520<br/>
-ORI R11,R0,36863<br/>
-SLL R12,R12,8<br/>
-ORI R12,R0,40959<br/>
-SLL R12,R12,8<br/>
-ORI R12,R0,61439<br/>
-SLL R13,R13,8<br/>
-ORI R13,R0,36656<br/>
-SLL R13,R13,8<br/>
-ORI R13,R0,32796<br/>
-SLL R14,R14,8<br/>
-ORI R14,R0,32797<br/>
-SLL R14,R14,8<br/>
-ORI R14,R0,32798<br/>
-SLL R15,R15,8<br/>
-ORI R15,R0,32799<br/>
-SLL R15,R15,8<br/>
-ADDU R0,R0,R0<br/>
-ADDU R0,R0,R0<br/>
-ADDU R0,R0,R1<br/>
-ADDU R0,R0,R1<br/>
-ADDU R2,R2,R0<br/>
-ADDU R2,R2,R0<br/>
-ADDU R2,R2,R1<br/>
-ADDU R2,R2,R1<br/>
-ADDU R2,R2,R0<br/>
+subu $s3,$s2,$s0
+
+ori  $s0,$1,2
+
+sll  $s1,$3,2
+
+lw   $s4,3($s1)
+
+sw   $s4,3($s1)
+
+beq  $s1,$3,goto
+
+j goto
+``` 
+### 8. 如何把汇编代码编译成机器码？
+我知道两种方法：
+
+1）. [http://courses.missouristate.edu/kenvollmar/mars/index.htm](MARS (MIPS Assembler and Runtime Simulator)) 需要Java环境，加上配置Java环境不到半小时就能搞定，小巧简单好用（更推荐⭐）
+
+2）. 交叉编译工具链。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供很多完整编译工具，比如mips-linux-gcc（类似gcc）
