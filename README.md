@@ -71,15 +71,15 @@ b. 交叉编译工具链。[简介](https://www.bilibili.com/video/BV1Az4y117rY?
 。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供完备的编译工具，比如mips-linux-gcc（类似gcc）
 
 ### 9. MARS使用方式：
-a. 打开inst.asm
+1）. 打开inst.asm
 ``` 
 File -> Open -> inst.asm
 ```
-b. 把起始地址改成0，不然beq,j跳转不到想要的地方，因为咱们设置的cpu的指令的起始地址是0
+2）. 把起始地址改成0，不然beq,j跳转不到想要的地方，因为咱们设置的cpu的指令的起始地址是0
 ``` 
 Settings -> Memory Configration -> 选择 Compact,Text at Address 0
 ```
-c. 导出16进制机器码（Dump machine code）
+3）. 导出16进制机器码（Dump machine code）
 ``` 
-蓝色箭头1010（） -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt / imem.data
+蓝色箭头1010 -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt / imem.data
 ```
