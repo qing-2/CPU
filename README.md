@@ -65,7 +65,21 @@ j goto
 ### 8. 如何把汇编代码编译成机器码？
 我知道两种方法：
 
-1）. [MIPS Assembler and Runtime Simulator | Verilog](http://courses.missouristate.edu/kenvollmar/mars/index.htm) 需要Java环境，加上配置Java环境不到半小时就能搞定，小巧简单好用（更推荐⭐）
+a.  [MARS | MIPS Assembler and Runtime Simulator](http://courses.missouristate.edu/kenvollmar/mars/index.htm) 需要Java环境，加上配置Java环境不到半小时就能搞定，小巧简单好用（更推荐⭐）
 
-2）. 交叉编译工具链。[简介](https://www.bilibili.com/video/BV1Az4y117rY?spm_id_from=333.999.header_right.fav_list.click)
+b. 交叉编译工具链。[简介](https://www.bilibili.com/video/BV1Az4y117rY?spm_id_from=333.999.header_right.fav_list.click)
 。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供完备的编译工具，比如mips-linux-gcc（类似gcc）
+
+### 9. MARS使用方式：
+a. 打开inst.asm
+``` 
+File -> Open -> inst.asm
+```
+b. 把起始地址改成0，不然beq,j跳转不到想要的地方，因为咱们设置的cpu的指令的起始地址是0
+``` 
+Settings -> Memory Configration -> 选择 Compact,Text at Address 0
+```
+c. 导出16进制机器码（Dump machine code）
+``` 
+蓝色箭头1010（） -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt / imem.data
+```
