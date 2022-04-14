@@ -82,5 +82,5 @@ Settings -> Memory Configration -> 选择 Compact,Text at Address 0
 ```
 3）. 导出16进制机器码（Dump machine code）
 ``` 
-蓝色箭头1010 -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt / imem.data
+蓝色箭头1010 -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt or imem.data
 ```
