@@ -9,8 +9,8 @@ Add or create design sources -> Add files -> Add Directories
 ```
 Run Simulation 
 ```
-这是解释代码的视频链接 [【计算机组成原理】MIPS单周期CPU设计 | Verilog](https://www.bilibili.com/video/BV1rD4y1D7h9)  <hr/>
-<img src="https://github.com/qing-2/CPU/blob/master/run.jpg">
+这是解释代码的视频链接： [MIPS单周期CPU设计 # 视频中dmem.v未对数据存储器进行初始化 会导致lw出错 代码已经改正](https://www.bilibili.com/video/BV1rD4y1D7h9)  <hr/>
+<img src="https://github.com/qing-2/CPU/blob/master/run.jpg"> 
 
 # 常见问题
 ### 1. 运行不成功？
