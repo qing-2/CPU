@@ -48,7 +48,9 @@ assign alu_r = alu_out;
     
 assign maddr = alu_out;
 assign mwdata = rf_rdata2;
-
+assign temp1 = inst[25:0]<<2;
+assign temp2 = inst[15:0]<<2;
+    
 wire [4:0]mux6_out = M6 ? inst[20:16]:inst[15:11];
     
 decoder cpu_decoder(inst,clk,zero,IM_R,M3,M4,ALUC,M2,RF_W,M5,M1,DM_CS,DM_R,DM_W,M6,sign_ext);
@@ -56,7 +58,7 @@ decoder cpu_decoder(inst,clk,zero,IM_R,M3,M4,ALUC,M2,RF_W,M5,M1,DM_CS,DM_R,DM_W,
 PC cpu_pc(clk,reset,mux1_out,pc_out);
 NPC cpu_npc(pc_out,npc_out);
 
-JOIN cpu_join(inst[25:0]<<2,pc_out[31:28],join_out);
+JOIN cpu_join(temp1,pc_out[31:28],join_out);
 
 regfile cpu_regfile(clk,reset,RF_W,inst[25:21],inst[20:16],mux6_out,mux2_out,rf_rdata1,rf_rdata2);
 
@@ -66,7 +68,7 @@ ext5 cpu_ext5(inst[10:6],ext5_out);
 
 ext16 cpu_ext16(inst[15:0],sign_ext,ext16_out);
 
-ext18 cpu_ext18(inst[15:0]<<2,ext18_out);
+ext18 cpu_ext18(temp2,ext18_out);
 
 mux2x32 mux1(join_out,mux5_out,M1,mux1_out);
 
