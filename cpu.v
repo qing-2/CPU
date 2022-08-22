@@ -43,9 +43,9 @@ wire [31:0] rf_rdata1,rf_rdata2;
 wire [31:0] ext5_out,ext16_out,ext18_out;
 wire [31:0] npc_out;
 wire [31:0] join_out;
-
-assign alu_r = alu_out;
+wire [27:0] temp1,temp2;
     
+assign alu_r = alu_out;
 assign maddr = alu_out;
 assign mwdata = rf_rdata2;
 assign temp1 = inst[25:0]<<2;
