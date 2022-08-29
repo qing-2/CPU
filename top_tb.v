@@ -44,8 +44,9 @@ module top_tb;
 
     initial
     begin
-        reset = 1;
-        #50 reset=0;
+        reset = 0;
+        #50 reset=1;
+        #10 reset=0;
         #2000 $stop;
     end
         
