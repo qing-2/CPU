@@ -10,7 +10,7 @@ Add or create design sources -> Add files -> Add Directories
 Run Simulation 
 ```
 这是解释代码的视频链接： [MIPS单周期CPU设计 # 视频中dmem.v未对数据存储器进行初始化 会导致lw出错 代码已经改正](https://www.bilibili.com/video/BV1rD4y1D7h9)  <hr/>
-<img src="https://github.com/qing-2/CPU/blob/master/run.jpg"> 
+<img src="https://github.com/qing-2/CPU/blob/master/run.png"> 
 
 # 常见问题
 ### 1. 运行不成功？
@@ -71,7 +71,7 @@ a.  [MARS | MIPS Assembler and Runtime Simulator](http://courses.missouristate.e
 b. 交叉编译工具链。[简介](https://www.bilibili.com/video/BV1Az4y117rY?spm_id_from=333.999.header_right.fav_list.click)
 。《自己动手写CPU》里用的GNU，有详细讲解，但书里那个链接下载下来是坏的。它提供完备的编译工具，比如mips-linux-gcc（类似gcc）
 
-### 9. MARS使用方式：
+### 9. MARS使用方式：[视频](https://www.bilibili.com/video/BV1au411y7qq?spm_id_from=333.999.0.0&vd_source=28fde4fc435198ce5dd62f4990596b95)
 1）. 打开inst.asm
 ``` 
 File -> Open -> inst.asm
