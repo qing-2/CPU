@@ -84,3 +84,6 @@ Settings -> Memory Configration -> 选择 Compact,Text at Address 0
 ``` 
 蓝色箭头1010 -> Dump Format 选择 Hexadecimal Text -> Dump To File -> imem.txt or imem.data
 ```
+
+### 10. 如何在波形图查看其他信号？
+vivado: 在波形图左侧 点scope 可以看到所有模块，选中 右键 add to wave 图里就有这个些变量了，再重新跑一下仿真（Relaunch Simulation）就有波形了
