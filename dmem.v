@@ -31,10 +31,10 @@ input [31:0] wdata,
 output [31:0] rdata
     );
     
-reg [31:0] ROM [2047:0];
+reg [31:0] ROM [0:2047];
 initial
 begin
-  $readmemh("D:/Downloads/CPU-master/rom.data",ROM);
+  $readmemh("your_dir/rom.data",ROM);
 end
 
 

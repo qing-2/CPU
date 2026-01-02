@@ -26,10 +26,10 @@ input IM_R,
 output [31:0] rd
     );
    
-    reg [31:0] RAM[2047:0];
+    reg [31:0] RAM [0:2047];
     initial
     begin
-      $readmemh("imem.txt",RAM);
+      $readmemh("your_dir/imem.txt",RAM);
     end
     
    assign rd=(IM_R)?RAM[a[31:2]]:32'bx;
